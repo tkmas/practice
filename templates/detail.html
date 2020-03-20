@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}OneCode-EC-Detail{{ item.id }}{% endblock %}
+
+{% block content %}
+<p>{{ item }}</p>
+
+<p>元画像<img src="{{ item.origin.url }}"></p>
+
+<p>大きい画像<img src="{{ item.big.url }}"></p>
+
+<p>普通画像<img src="{{ item.middle.url }}"></p>
+
+<p>小さい画像<img src="{{ item.small.url }}"></p>
+
+{% endblock %}
+
+

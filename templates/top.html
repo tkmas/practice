@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block title %}OneCode-EC-TopPage{% endblock %}
+
+{% block content %}
+<h1>ONE CODE 販売サイトです</h1>
+<div class="header">
+    <div class="login">
+        <a href="{% url 'login' %}">ログイン</a>
+    </div>
+    <div class="register">
+        <a href="{% url 'resister-user' %}">新規会員登録</a>
+    </div>
+</div>
+<div class="contact">
+    <p>お問い合わせはこちら</p>
+</div>
+
+<div class="item-list">
+    <div class="item">
+        {% for item in items %}
+        <li>
+            <a href="{% url 'image_detail' item.id %}">
+                <p>{{ item.id }}の画像</p>
+                <img src="{{ item.thumbnail.url }}">
+                <img src="{{ item.origin.url }}">
+            </a>
+        </li>
+        {% endfor %}
+    </div>
+</div>
+
+<div>
+    <form>
+        <table>
+            <tbody>
+            <tr>
+                <th>
+                    <label>
+                        お名前
+                        <span class="required">必須</span>
+                    </label>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <input placeholder="田中角栄" required="required" type="text" name="name">
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </form>
+
+</div>
+{% endblock %}

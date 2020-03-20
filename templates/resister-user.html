@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}OneCode-EC-Resister{% endblock %}
+
+{% block content %}
+<h1>新規登録ページ</h1>
+{{ message }}
+<form method="post" action="">
+    {% csrf_token %}
+    {{ form.errors.name }}
+    <label>{{ form.name.label }}{{ form.name }}</label><br>
+    {{ form.errors.hurigana }}
+    <label>{{ form.hurigana.label }}{{ form.hurigana }}</label><br>
+    {{ form.errors.mail_address }}
+    <label>{{ form.mail_address.label }}{{ form.mail_address }}</label><br>
+    {{ form.errors.address }}
+    <label>{{ form.address.label }}{{ form.address }}</label><br>
+    {{ form.errors.telephone_number }}
+    <label>{{ form.telephone_number.label }}{{ form.telephone_number }}</label><br>
+    {{ form.errors.password }}
+    <label>{{ form.password.label }}{{ form.password }}</label><br>
+    {{ form.errors.gender }}
+    <label>{{ form.gender.label }}{{ form.gender }}</label><br>
+
+
+    <input type="submit" value="送信">
+</form>
+
+{% endblock %}
+
+
